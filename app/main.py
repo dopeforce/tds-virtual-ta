@@ -1,10 +1,21 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 
 from app import __version__
 from app.api.routes import router as api_router
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Lifespan event handler for the FastAPI application.
+    This is used to perform startup and shutdown tasks.
+    """
+    print(f"✅ Starting upto the FastAPI application")
+    yield
+    print(f"❎ Shutting down the FastAPI application")
+    
 app = FastAPI(
     title="tds-virtual-ta",
     version=__version__,
@@ -15,6 +26,7 @@ app = FastAPI(
             "description": "Endpoints for interacting with the Virtual TA API.",
         },
     ],
+    lifespan=lifespan
 )
 app.router.redirect_slashes = False
 
@@ -25,14 +37,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.on_event("startup")
-async def startup_event():
-    pass
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    pass
 
 @app.middleware("http")
 async def strip_trailing_slash(request: Request, call_next):
