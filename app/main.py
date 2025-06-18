@@ -347,7 +347,7 @@ async def get_application_root_ui():
                 <input
                   type="text"
                   id="apiEndpoint"
-                  value="https://app.example.com/api/"
+                  value="https://virtual-ta.pythonicvarun.me/api/"
                   class="flex-1 bg-gray-700 text-white rounded-l-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
                 <button
