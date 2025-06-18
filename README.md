@@ -111,7 +111,8 @@ dopeforce/tds-virtual-ta/
 
 This directory contains various utility and automation scripts for data preparation, processing, and automation:
 
-### Scrape Discourse Threads | [`scrape_discourse_threads.py`](res/scrape_discourse_threads.py)
+## Scrape Discourse Threads
+### [ ✅ Click Here :  ](https://github.com/dopeforce/tds-virtual-ta/tree/meta/res/discourse_threads)[`scrape_discourse_threads.py`](res/scrape_discourse_threads.py)
 
 - **Purpose:** Downloads all Discourse threads in a specific category between two dates, including all posts in each thread (with pagination support). Supports authentication via API key or cookies.
 
@@ -190,7 +191,8 @@ This directory contains various utility and automation scripts for data preparat
 
 ---
 
-### Convert JSON to Markdown | [`jsonpost_2_markdownfile.py`](res/jsonpost_2_markdownfile.py)
+## Convert JSON to Markdown
+### [ ✅ Click Here :  ](https://github.com/dopeforce/tds-virtual-ta/tree/meta/res/discourse_posts)[`jsonpost_2_markdownfile.py`](res/jsonpost_2_markdownfile.py)
 
 - **Purpose:** Converts Discourse thread JSON files into plain-text Markdown summaries. Can process a single file or all JSON files in a directory.
 - **Usage:**
@@ -201,7 +203,10 @@ This directory contains various utility and automation scripts for data preparat
   python scripts/jsonpost_2_markdownfile.py data/raw_discourse_threads --output data/discourse_posts
   ```
 
-### Scrape Course Content | [`scrape_discourse_content.py`](scripts/scrape_discourse_content.py)
+## Scrape Course Content
+### [ ✅ Click Here :  ](https://github.com/dopeforce/tds-virtual-ta/tree/meta/res/discourse_content)[`scrape_discourse_content.py`](scripts/scrape_discourse_content.py)
+
+[](https://github.com/dopeforce/tds-virtual-ta/tree/meta/res/discourse_content)
 
 - **Purpose:** Downloads a GitHub repository (by branch or commit) as a ZIP, extracts it, and keeps only `.md` files, deleting everything else.
 
@@ -217,7 +222,8 @@ This directory contains various utility and automation scripts for data preparat
 
 ---
 
-### Build Vector Database | [`create_vector_db.py`](res/create_vector_db_openai.py)
+## Build Vector Database
+### [ ✅ Click Here :  ](https://github.com/dopeforce/tds-virtual-ta/tree/meta/res/model)[`create_vector_db.py`](res/create_vector_db_openai.py)
 
 - **Purpose:** Builds a FAISS vector database from text, Markdown, or HTML files (e.g., course content or discourse posts). Chunks and embeds text using OpenAI API, and saves the index and metadata for later retrieval.
 
