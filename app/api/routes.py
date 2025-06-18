@@ -1,4 +1,5 @@
 import json
+
 from app.core.config import Config
 from app.core.templates import TemplateManager
 from app.models.faiss_index import FAISSIndex
@@ -59,8 +60,16 @@ async def chat(request: ChatRequest):
                 answer="I'm sorry, I don't have enough context to answer that question.",
                 links=[],
             )
-        data = json.loads(response.content.strip())
-        return ChatResponse(answer=data["answer"], links=data["links"])
+        try:
+            data = json.loads(response.content.strip())
+            if not isinstance(data, dict) or "answer" not in data or "links" not in data:
+                raise ValueError("Invalid response format: missing 'answer' or 'links'")
+            return ChatResponse(answer=data["answer"], links=data["links"])
+        except (json.JSONDecodeError, ValueError) as e:
+            return ChatResponse(
+                answer="I'm sorry, I couldn't process the response due to an internal error.",
+                links=[],
+            )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"OpenAI API error: {e}")
 
