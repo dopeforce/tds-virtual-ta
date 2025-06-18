@@ -3,7 +3,7 @@ description: "TDS Virtual TA Project Sample (but not the actual evaluation) Ques
 providers:
   - id: https
     config:
-      url: https://app.example.com/api/
+      url: https://app.example.com/api              # Use this instead https://virtual-ta.pythonicvarun.me/api/
       method: POST
       headers:
         Content-Type: application/json
