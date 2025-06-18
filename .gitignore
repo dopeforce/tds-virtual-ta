@@ -177,3 +177,4 @@ cython_debug/
 # Course content and Model data
 #   This is a course-specific file that is not needed for the project.
 #   It is recommended to not include it in version control.
+res/
