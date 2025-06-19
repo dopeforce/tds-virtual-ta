@@ -72,7 +72,7 @@ async def get_application_root_ui():
         }
 
         .glass-container {
-            background: #1f1e1e;
+            background: #1B1B1B;
             border-radius: 20px;
             box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.3);
             padding: 30px;
@@ -400,7 +400,7 @@ async def get_application_root_ui():
                                     <path d="M14.72,8.79l-4.29,4.3L8.78,11.44a1,1,0,1,0-1.41,1.41l2.35,2.36a1,1,0,0,0,.71.29,1,1,0,0,0,.7-.29l5-5a1,1,0,0,0,0-1.42A1,1,0,0,0,14.72,8.79ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"></path>
                                 </svg>
                             </div>
-                            Success
+                            success
                         `;
                         responseStatus.className = "success-status";
                     } else {
@@ -425,7 +425,7 @@ async def get_application_root_ui():
                                 <path d="M15.71,8.29a1,1,0,0,0-1.42,0L12,10.59,9.71,8.29A1,1,0,0,0,8.29,9.71L10.59,12l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L13.41,12l2.3-2.29A1,1,0,0,0,15.71,8.29Zm3.36-3.36A10,10,0,1,0,4.93,19.07,10,10,0,1,0,19.07,4.93ZM17.66,17.66A8,8,0,1,1,20,12,7.95,7.95,0,0,1,17.66,17.66Z"></path>
                             </svg>
                         </div>
-                        Error
+                        error
                     `;
                     responseStatus.className = "error-status";
                     responseData.textContent = error.message;
