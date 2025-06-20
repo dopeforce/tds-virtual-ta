@@ -8,9 +8,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Copy source
-COPY ./requirements.txt ./requirements.txt
+COPY ./requirements.txt
 
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --root-user-action=ignore -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt                        
 
 COPY . .
 
